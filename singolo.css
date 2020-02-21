@@ -11,3 +11,11 @@ body {
 	font: 400 12rem "Lato";
 	color: #767e9e;
 }
+
+.inner {
+	margin: 0 auto;
+	padding: 0 14px;
+	width: 95vw;
+	max-width: 1200px;
+	height: 100%;
+}
