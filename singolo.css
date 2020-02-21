@@ -65,3 +65,36 @@ header.header {
 }
 
 /* End Header ===========*/
+
+/* Banner */
+section.banner {
+	height: 600px;
+	background-color: #ef6c64;
+	border-bottom: 6px solid #ea676b;
+}
+
+.inner-banner {
+	position: relative;
+}
+
+.inner-banner__image {
+	padding: 52px 0 0 71px;
+}
+
+.arrow {
+	position: absolute;
+	margin: auto 0;
+	font-size: 31rem;
+	color: #ca4549;
+	top: 275px;
+}
+
+.arrow:hover {
+	color: #323746;
+}
+
+.right-arrow {
+	right: 13px;
+}
+
+/* End Banner ==========*/
