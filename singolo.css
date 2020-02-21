@@ -19,3 +19,49 @@ body {
 	max-width: 1200px;
 	height: 100%;
 }
+
+/* Header */
+header.header {
+	height: 95px;
+	background-color: #2d303a;
+	border-bottom: 6px solid #323746;
+}
+
+.inner-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+.logo {
+	display: flex;
+}
+
+.logo__name {
+	font-size: 25rem;
+	line-height: 1.25;
+	letter-spacing: -0.5px;
+}
+
+.fa-asterisk {
+	margin-top: 5px;
+	font-size: 8rem;
+	color: #f06c64;
+}
+
+.menu {
+	padding-top: 10px;
+}
+
+.menu__item {
+	margin-left: 29px;
+	letter-spacing: -0.3px;
+}
+
+.menu__item:hover {
+	color: #f06c64;
+}
+
+/* End Header ===========*/
