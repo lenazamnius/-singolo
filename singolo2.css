@@ -23,6 +23,7 @@ body {
 	font-weight: 300;
 	font-size: 18rem;
 	line-height: 30px;
+	overflow: hidden;
 }
 
 .title__header {
@@ -75,20 +76,19 @@ section.portfolio {
 }
 
 .inner-portfolio {
-  height: 864px;
-  padding: 63px 40px 0 40px;
+  padding: 63px 40px 67px 40px;
 }
 
 .sort-bar {
-	padding: 10px 0 9px 0;
+	padding: 11px 0 8px 0;
 }
 
 .sort-bar__button {
   display: inline-block;
   padding: 2px 7px;
   margin-right: 10px;
-  letter-spacing: -0.45px;
-  line-height: 17px;
+	letter-spacing: -0.42px;
+	line-height: 17.2rem;
   border: 1px solid #666d89;
   border-radius: 5px;
   outline: none;
