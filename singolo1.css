@@ -123,6 +123,7 @@ section.banner {
 	font-size: 31rem;
 	color: #ca4549;
 	top: 275px;
+	cursor: pointer;
 }
 
 .arrow:hover {
