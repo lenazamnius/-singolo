@@ -69,9 +69,7 @@ header.header {
 	letter-spacing: -0.5px;
 }
 
-.fa-asterisk {
-	margin-top: 5px;
-	font-size: 8rem;
+.asterisk {
 	color: #f06c64;
 }
 
