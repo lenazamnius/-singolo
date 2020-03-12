@@ -451,60 +451,57 @@ input:last-child:hover {
 	opacity: 1;
 }
 
-/* ------ Styles for pop-up ---------- */
+/* End Contact ============*/
 
-#pop-up {
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	top: 2831px;
-	left: 0;
-	background-color: #f48c8f85;;
-}
+/* ------ Styles for pop-up ---------- */
+/* some styles to position the modal at the center of the page */
 
 #pop-up.hidden {
 	display: none;
 }
 
-.pop-up__content {
-	position: absolute;
-	top: 35%;
-	left: 35%;
-	max-width: 35%;
-	padding: 20px 30px;
+#pop-up {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	max-height: 350px;
+	margin-left: -200px;
+	margin-top: -125px;
+	padding: 20px 30px 30px 30px;
 	font-size: 16rem;
 	color: #f48c8f;
 	text-align: left;
 	line-height: 25px;
 	letter-spacing: 0.5px;
 	overflow: hidden;
-	background: #d6564f;
-	border-radius: 5px;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .15),
-    0 4px 4px 0 rgba(0, 0, 0, .2),
-    0 2px 2px 0 rgba(0, 0, 0, .4);
+	background-color: #d6564f;
+
+	/* needed styles for the overlay */
+	z-index: 10; /* keep on top of other elements on the page */
+	outline: 9999px solid #f48c8f90;
 }
 
-.pop-up__content > p:first-of-type {
+#pop-up > p:first-of-type {
 	margin-bottom: 12px;
 	font-size: 18rem;
 	text-align: center;
 }
 
-.pop-up__content > p {
+#pop-up > p {
+	max-height: 200px;
 	overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.pop-up__content > p > span {
+#pop-up > p > span {
 	color: #f2f2f2;
 	text-align: justify;
 }
 
-
 #pop-up__button {
 	width: 100%;
-	margin-top: 10px;
+	margin-top: 20px;
 	padding: 5px 0;
 	font-weight: 700;
 	color: #d6564f;
@@ -518,8 +515,6 @@ input:last-child:hover {
 	background-color: #f48c8f;
 }
 /* -------- END styles for pop-up---------- */
-
-/* End Contact ============*/
 
 /* Footer */
 
