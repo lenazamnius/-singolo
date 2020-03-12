@@ -10,15 +10,15 @@
 </head>
 <body>
   <!-- header -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="inner inner-header">
       <div class="logo">
         <h1 class="logo__name">
           <a href="#">SINGOLO<span class="asterisk">*</span></a>
         </h1>
       </div>
-      <nav class="menu">
-        <a class="menu__item" href="#banner">HOME</a>
+      <nav class="menu" id="menu">
+        <a class="menu__item active" href="#header">HOME</a>
         <a class="menu__item" href="#services">SERVICES</a>
         <a class="menu__item" href="#portfolio">PORTFOLIO</a>
         <a class="menu__item" href="#about">ABOUT</a>
@@ -41,7 +41,7 @@
   <!-- ####banner -->
 
   <!-- services -->
-  <section class="services">
+  <section class="services" id="services">
     <div class="inner inner-services">
       <div class="title">
         <h3 class="title__header">Our Services</h3>
@@ -120,19 +120,19 @@
   <!-- #### services -->
 
   <!-- portfolio -->
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
     <div class="inner inner-portfolio">
       <div class="title">
         <h3 class="title__header">Portfolio</h3>
         <p class="title__content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>  
       </div>
-      <div class="sort-bar">
-        <a href="#All" class="sort-bar__button">All</a>
+      <div class="sort-bar" id="sort-bar">
+        <a href="#All" class="sort-bar__button active">All</a>
         <a href="#Web-Design" class="sort-bar__button">Web Design</a>
         <a href="#Graphic-Design" class="sort-bar__button">Graphic Design</a>
         <a href="#Artwork" class="sort-bar__button">Artwork</a>
       </div>
-      <div class="image-container">
+      <div class="image-container" id="image-container">
         <div class="image-container__item">
           <img src="./assets/images/img1-portfolio.jpg" alt="image of some site">
         </div>
@@ -178,7 +178,7 @@
   <!-- #### portfolio -->
 
   <!-- about -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="inner inner-about">
       <div class="title">
         <h3 class="title__header">About Us</h3>
@@ -230,20 +230,28 @@
   <!-- #### about -->
 
   <!-- contact -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="inner inner-contact">
       <div class="title title--light">
         <h3 class="title__header title__header--light">Get a Quote</h3>
         <p class="title__content">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       </div>
       <div class="contact-container">
-        <form class="request-form" action="#" method="post" target='_blank'>
-          <input type="text" name="name" placeholder="Name (Required)" required>
-          <input type="email" name="email" placeholder="Email (Required)" required>
-          <input type="text" name="subject" placeholder="Subject">
-          <textarea name="message" id="#" cols="30" rows="13" placeholder="Describe your project in detail..."></textarea>
-          <input type="submit" value="Submit">
+        <form class="request-form" action="#" method="POST" onsubmit="return false;"> 
+          <input type="text" name="user_name" id="user_name" placeholder="Name (Required)" required>
+          <input type="email" name="email" id="email" placeholder="Email (Required)" required>
+          <input type="text" name="subject" id="subject" placeholder="Subject">
+          <textarea name="message" id="text" cols="30" rows="13" placeholder="Describe your project in detail..."></textarea>
+          <input type="submit" id="submit" value="Submit">
         </form>
+        <div id="pop-up" class="hidden">
+          <div class="pop-up__content">
+            <p>Message has sent</p>
+            <p>Subject: <span id="ms_subject">none</span></p>
+            <p>Description: <span id="ms_text">none</span></p>
+            <button id="pop-up__button">OK</button>
+          </div>
+        </div>
         <div class="contacts">
           <h4 class="contacts__title">Contact Information</h4>
           <p class="contacts__text">Quisque hendrerit purus dapibus, ornare nibh vitae, viver- ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -269,6 +277,8 @@
         <a href="#linkedin-in" class="media__item"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </footer>
   <!-- #### footer -->
 </body>
