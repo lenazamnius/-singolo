@@ -455,12 +455,11 @@ input:last-child:hover {
 
 /* ------ Styles for pop-up ---------- */
 /* some styles to position the modal at the center of the page */
-
-#pop-up.hidden {
+.pop-up.hidden {
 	display: none;
 }
 
-#pop-up {
+.pop-up {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -476,30 +475,28 @@ input:last-child:hover {
 	letter-spacing: 0.5px;
 	overflow: hidden;
 	background-color: #d6564f;
-
-	/* needed styles for the overlay */
-	z-index: 10; /* keep on top of other elements on the page */
+	z-index: 10;
 	outline: 9999px solid #f48c8f90;
 }
 
-#pop-up > p:first-of-type {
+.pop-up > p:first-of-type {
 	margin-bottom: 12px;
 	font-size: 18rem;
 	text-align: center;
 }
 
-#pop-up > p {
+.pop-up > p {
 	max-height: 200px;
 	overflow: hidden;
   text-overflow: ellipsis;
 }
 
-#pop-up > p > span {
+.pop-up > p > span {
 	color: #f2f2f2;
 	text-align: justify;
 }
 
-#pop-up__button {
+.pop-up > button {
 	width: 100%;
 	margin-top: 20px;
 	padding: 5px 0;
@@ -510,7 +507,7 @@ input:last-child:hover {
 	outline: none;
 }
 
-#pop-up__button:hover {
+.pop-up > button:hover {
 	color: #f0d8d9;
 	background-color: #f48c8f;
 }
