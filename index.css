@@ -140,8 +140,46 @@ section.banner {
 	padding: 0 40px;
 }
 
-.inner-banner__image {
-	padding: 52px 0 0 71px;
+.banner__slider1 {
+	/* position: relative; */
+	/* border: 1px solid red; */
+	/* transform: translateX(50px); */
+}
+
+.banner__container-left {
+	/* position: relative; */
+}
+
+.banner__vertical-phone {
+	position: absolute;
+	top: 53px;
+  left: 112px;
+	z-index: 4;
+}
+
+.banner__horizontal-phone {
+	position: absolute;
+	top: 174px;
+	right: 112px;
+	z-index: 4;
+}
+
+.banner__vertical-display {
+	position: absolute;
+	top: 118px;
+	left: 126px;
+	z-index: 5;
+}
+
+.banner__horizontal-display {
+	position: absolute;
+	top: 188px;
+  right: 202px;
+	z-index: 5;
+}
+
+.banner__slider2 {
+	display: none;
 }
 
 .arrow {
@@ -488,7 +526,7 @@ input:last-child:hover {
 .pop-up > p {
 	max-height: 200px;
 	overflow: hidden;
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 .pop-up > p > span {
