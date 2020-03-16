@@ -1,4 +1,9 @@
 const menu = document.getElementById('menu');
+const slides = document.querySelectorAll('.slide');
+const leftArrow = document.getElementById('left-arrow');
+const rightArrow = document.getElementById('right-arrow');
+const verticalPhone = document.getElementById('vertical-phone');
+const horizontalPhone = document.getElementById('horizontal-phone');
 const sortBar = document.getElementById('sort-bar');
 const imageGallery = document.getElementById('image-container');
 const submit = document.getElementById('submit');
@@ -9,30 +14,95 @@ const descriptionInput = document.getElementById('text');
 const popUpSubject = document.getElementById('ms_subject');
 const popUpDescription = document.getElementById('ms_text');
 
-// header section 
+// HEADER section 
 menu.addEventListener('click', (event) => {
   menu.querySelectorAll('a.menu__item').forEach((el) => el.classList.remove('active'));
   event.target.classList.add('active');
 });
-// header section end
+// HEADER section end
 
-// slider section
-const verticalPhone = document.getElementById('vertical-phone');
-const horizontalPhone = document.getElementById('horizontal-phone');
+// SLIDER section
+let currentSlide = 0;
+let isEnabled = true;
+
+function changeCurrentSlide(num) {
+  currentSlide = (num + slides.length) % slides.length;
+}
+
+function hideSlide(direction) {
+  isEnabled = false;
+  slides[currentSlide].classList.add(direction);
+  slides[currentSlide].addEventListener('animationend', function() {
+    this.classList.remove('active', direction);
+  });
+}
+
+function showSlide(direction) {
+  slides[currentSlide].classList.add('next', direction);
+  slides[currentSlide].addEventListener('animationend', function() {
+    this.classList.remove('next', direction);
+    this.classList.add('active');
+    isEnabled = true;
+  });
+}
+
+function prevSlide(num) {
+  hideSlide('to-left');
+  changeCurrentSlide(currentSlide - 1);
+  showSlide('from-right');
+}
+
+function nextSlide(num) {
+  hideSlide('to-right');
+  changeCurrentSlide(currentSlide + 1);
+  showSlide('from-left');
+}
+
+function changeBackground() {
+  const background = document.querySelector('section.banner');
+  if(!background.style.backgroundColor || background.style.backgroundColor === 'rgb(239, 108, 100)') {
+    background.style.backgroundColor = 'rgb(100, 139, 240)';
+    background.style.borderBottom = '6px solid rgb(101, 128, 195)'
+  } else {
+    background.style.backgroundColor = 'rgb(239, 108, 100)';
+    background.style.borderBottom = '6px solid #ea676b'
+  } 
+}
 
 verticalPhone.addEventListener('click', () => {
   let verDisplay = document.getElementById('vertical-display');
-  (verDisplay.style.zIndex === '' || verDisplay.style.zIndex === '5') ? verDisplay.style.zIndex = '3' : verDisplay.style.zIndex = '5';
+  (!verDisplay.style.zIndex || verDisplay.style.zIndex === '5') ? verDisplay.style.zIndex = '3' : verDisplay.style.zIndex = '5';
 });
 
 horizontalPhone.addEventListener('click', () => {
   let horDisplay = document.getElementById('horizontal-display');
-  (horDisplay.style.zIndex === '' || horDisplay.style.zIndex === '5') ? horDisplay.style.zIndex = '3' : horDisplay.style.zIndex = '5';
+  (!horDisplay.style.zIndex || horDisplay.style.zIndex === '5') ? horDisplay.style.zIndex = '3' : horDisplay.style.zIndex = '5';
 });
 
-// slider section end
+leftArrow.addEventListener('click', () => {
+  changeBackground();
+  if(isEnabled) {
+    prevSlide(currentSlide);
+  }
+});
 
-// portfolio section
+rightArrow.addEventListener('click', () => {
+  changeBackground();
+  if(isEnabled) {
+    nextSlide(currentSlide);
+  }
+});
+// SLIDER section end
+
+// PORTFOLIO section
+function indexesPattern(arr) {
+  for(i = 0; i < arr.length; i++) {
+    let tempNode = (document.getElementById(`image${arr[i]}`));
+    imageGallery.removeChild((document.getElementById(`image${arr[i]}`)));
+    imageGallery.appendChild(tempNode);
+  }
+}
+
 sortBar.addEventListener('click', (event) => {
   imageGallery.querySelectorAll('div.image-container__item > img').forEach((el) => el.classList.remove('active'));
   sortBar.querySelectorAll('a.sort-bar__button').forEach((el) => el.classList.remove('active'));
@@ -55,21 +125,13 @@ sortBar.addEventListener('click', (event) => {
   event.target.classList.add('active');
 });
 
-function indexesPattern(arr) {
-  for(i = 0; i < arr.length; i++) {
-    let tempNode = (document.getElementById(`image${arr[i]}`));
-    imageGallery.removeChild((document.getElementById(`image${arr[i]}`)));
-    imageGallery.appendChild(tempNode);
-  }
-}
-
 imageGallery.addEventListener('click', (event) => {
   imageGallery.querySelectorAll('div.image-container__item > img').forEach((el) => el.classList.remove('active'));
   event.target.classList.add('active');
 });
-// portfolio section end
+// PORTFOLIO section end
 
-// contacts section
+// CONTACTS section
 submit.addEventListener('click', () => {
   const regex = /\S+@\S+/;
   if(document.getElementById('user_name').value != '' && regex.test(document.getElementById('email').value)) {
@@ -87,5 +149,5 @@ popUpButton.addEventListener('click', () => {
   popUpDescription.innerText = 'none';
   popUp.classList.add('hidden');
 });
-// contacts section end
+// CONTACTS section end
 

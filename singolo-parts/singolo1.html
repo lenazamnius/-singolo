@@ -10,15 +10,15 @@
 </head>
 <body>
   <!-- header -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="inner inner-header">
       <div class="logo">
         <h1 class="logo__name">
-          <a href="#"></a>SINGOLO<span class="asterisk">*</span></a>
+          <a href="#">SINGOLO<span class="asterisk">*</span></a>
         </h1>
       </div>
-      <nav class="menu">
-        <a class="menu__item" href="#banner">HOME</a>
+      <nav class="menu" id="menu">
+        <a class="menu__item active" href="#header">HOME</a>
         <a class="menu__item" href="#services">SERVICES</a>
         <a class="menu__item" href="#portfolio">PORTFOLIO</a>
         <a class="menu__item" href="#about">ABOUT</a>
@@ -26,28 +26,37 @@
       </nav>
     </div>
   </header>
-  <!-- #### header -->
+  <!-- end header -->
 
   <!-- banner -->
   <section class="banner">
     <div class="inner inner-banner">
-      <div class="arrow left-arrow"><i class="fas fa-chevron-left"></i></div>
-      <div class="inner-banner__image">
-        <img src="../assets/images/iPhones-banner.png" alt="image of iPhones">
+      <div class="banner__carousel">
+        <div class="banner__slide-wrapper">
+          <div class="slide active">
+            <img class="banner__vertical-display" id="vertical-display" src="../assets/images/phone-vertical-display.png" alt="phone vertical display">
+            <img class="banner__vertical-phone" id="vertical-phone"  src="../assets/images/phone-vertical.png" alt="image of vertical phone">
+            <img class="banner__horizontal-display" id="horizontal-display" src="../assets/images/phone-horizontal-display.png" alt="phone horizontal display">
+            <img class="banner__horizontal-phone" id="horizontal-phone" src="../assets/images/phone-horizontal.png" alt="image of horizontal phone">
+          </div>
+          <div class="slide">
+            <img class="phones-group" src="../assets/images/slider2.png" alt="image of iPhones">
+          </div>
+        </div>  
       </div>
-      <div class="arrow right-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div id="left-arrow" class="arrow left-arrow"><i class="fas fa-chevron-left"></i></div>
+      <div id="right-arrow" class="arrow right-arrow"><i class="fas fa-chevron-right"></i></div>
     </div>
   </section>
-  <!-- ####banner -->
+  <!-- end banner -->
 
   <!-- services -->
-  <section class="services">
+  <section class="services" id="services">
     <div class="inner inner-services">
-      <div class="title title--padding">
+      <div class="title">
         <h3 class="title__header">Our Services</h3>
         <p class="title__content">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>  
       </div>
-
       <div class="services-container">       
         <div class="service">
           <div class="service__icon">
@@ -68,7 +77,7 @@
           </div>
           <div class="service__content">
             <h4 class="service__title">Inovative Ideas</h4>
-            <p class="service__text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+            <p class="service__text">Quisque luctus, quam eget molestie com- modo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
           </div>
         </div>
         <div class="service">
@@ -90,7 +99,7 @@
           </div>
           <div class="service__content">
             <h4 class="service__title">Responsive Layout</h4>
-            <p class="service__text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
+            <p class="service__text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Prae- sent elit leo.</p>
           </div>
         </div>
         <div class="service">
@@ -101,7 +110,7 @@
           </div>
           <div class="service__content">
             <h4 class="service__title">24 / 7 Support</h4>
-            <p class="service__text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
+            <p class="service__text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellen- tesque egestas venenatis lorem .</p>
           </div>
         </div>
         <div class="service">
@@ -118,6 +127,7 @@
       </div>
     </div>
   </section>
-  <!-- #### services -->
+  <!-- end services -->
+  <!-- <script src="../script.js"></script> -->
 </body>
 </html>

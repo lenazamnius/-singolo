@@ -1,4 +1,4 @@
-This is layout of Singolo free template for RSSchool.
+This is layout of Singolo free template for RSSchool task.
 
 [**See full page**](https://lenazamnius.github.io/singolo)
 ---
