@@ -1,6 +1,6 @@
 @import "assets/styles/normalize.css";
-@import "assets/styles/_common.css";
-@import "assets/styles/_pop-up.css";
+@import "assets/styles/common.css";
+@import "assets/styles/pop-up.css";
 
 /* Header */
 header.header {
@@ -542,9 +542,3 @@ footer.footer {
     line-height: 12px;
 }
 /* End Footer ==========*/
-
-/* Media queries ==========*/
-
-
-
-/* End media queries ==========*/
