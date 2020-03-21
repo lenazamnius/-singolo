@@ -150,8 +150,8 @@ submit.addEventListener('click', () => {
   const regex = /\S+@\S+/;
   if(document.getElementById('user_name').value != '' && regex.test(document.getElementById('email').value)) {
     if(subjectInput.value || descriptionInput.value) {
-      popUpSubject.innerText = subjectInput.value;
-      popUpDescription.innerText = descriptionInput.value;
+      (subjectInput.value === '') ? popUpSubject.innerText = 'No subject': popUpSubject.innerText = subjectInput.value;
+      (descriptionInput.value === '') ? popUpDescription.innerText = 'No description': popUpDescription.innerText = descriptionInput.value;
     }
     popUp.classList.remove('hidden');
   }
