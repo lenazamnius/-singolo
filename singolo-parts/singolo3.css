@@ -1,4 +1,4 @@
-@import "../assets/normalize.css";
+@import "../assets/styles/normalize.css";
 
 html,
 body {
@@ -169,21 +169,21 @@ footer.footer {
 
 .inner-footer {
   padding: 0 40px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
 }
 
 .copyright {
 	margin-left: 2px;
 	color: #666d89;
-  letter-spacing: -0.1px;
-  line-height: 12px;
+    letter-spacing: -0.1px;
+    line-height: 12px;
 }
 
 .copyright > .fa-copyright {
-  margin-right: -1px;
+    margin-right: -1px;
 }
 
 /* End Footer ==========*/

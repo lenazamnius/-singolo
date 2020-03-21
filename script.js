@@ -159,8 +159,6 @@ submit.addEventListener('click', () => {
 
 popUpButton.addEventListener('click', () => {
   document.querySelector('form').reset();
-  popUpSubject.innerText = 'none';
-  popUpDescription.innerText = 'none';
   popUp.classList.add('hidden');
 });
 // CONTACTS section end
