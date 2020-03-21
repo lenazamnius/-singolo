@@ -14,11 +14,25 @@ const descriptionInput = document.getElementById('text');
 const popUpSubject = document.getElementById('ms_subject');
 const popUpDescription = document.getElementById('ms_text');
 
+
 // HEADER section 
-menu.addEventListener('click', (event) => {
-  menu.querySelectorAll('a.menu__item').forEach((el) => el.classList.remove('active'));
-  event.target.classList.add('active');
-});
+function onScroll(event) {
+  const curPosition = window.scrollY + 95;
+  const sections = document.querySelectorAll('section');
+  
+  sections.forEach(el => {
+    if(el.offsetTop < curPosition && (el.offsetTop + el.offsetHeight) > curPosition) {
+      menu.querySelectorAll('a.menu__item').forEach((a) => {
+        a.classList.remove('active');
+        if(el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+          a.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+document.addEventListener('scroll', onScroll);
 // HEADER section end
 
 // SLIDER section
@@ -80,16 +94,16 @@ horizontalPhone.addEventListener('click', () => {
 });
 
 leftArrow.addEventListener('click', () => {
-  changeBackground();
   if(isEnabled) {
     prevSlide(currentSlide);
+    changeBackground();
   }
 });
 
 rightArrow.addEventListener('click', () => {
-  changeBackground();
   if(isEnabled) {
     nextSlide(currentSlide);
+    changeBackground();
   }
 });
 // SLIDER section end
