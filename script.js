@@ -14,6 +14,15 @@ const descriptionInput = document.getElementById('text');
 const popUpSubject = document.getElementById('ms_subject');
 const popUpDescription = document.getElementById('ms_text');
 
+window.onresize = setSliderHeight;
+
+// this make responsive height of section banner
+function setSliderHeight() {
+  if(window.innerWidth < 1020) {
+    let slideHeight = window.innerWidth / 1.7 + 95;
+    document.querySelector('section.banner').style.height = `${slideHeight}px`;
+  }
+}
 
 // HEADER section 
 function onScroll(event) {
@@ -139,6 +148,7 @@ sortBar.addEventListener('click', (event) => {
   event.target.classList.add('active');
 });
 
+
 imageGallery.addEventListener('click', (event) => {
   imageGallery.querySelectorAll('div.image-container__item > img').forEach((el) => el.classList.remove('active'));
   event.target.classList.add('active');
@@ -159,6 +169,8 @@ submit.addEventListener('click', () => {
 
 popUpButton.addEventListener('click', () => {
   document.querySelector('form').reset();
+  popUpSubject.innerText = 'No subject';
+  popUpDescription.innerText = 'No description';
   popUp.classList.add('hidden');
 });
 // CONTACTS section end
