@@ -1,8 +1,9 @@
 @import "assets/styles/normalize.css";
 @import "assets/styles/common.css";
+@import "assets/styles/popup-panel.css";
 @import "assets/styles/pop-up.css";
 
-/* Header */
+/* ---------------------------------------------------    Header */
 header.header {
 	position: fixed;
 	width: 100%;
@@ -74,7 +75,7 @@ header.header {
 }
 /* End Header ===========*/
 
-/* Banner */
+/* ---------------------------------------------------    Banner */
 section.banner {
 	height: 695px;
 	padding-top: 95px;
@@ -89,8 +90,6 @@ section.banner {
 
 .arrow {
 	position: absolute;
-	/* top: 275px;
-	margin: auto 0; */
 	margin-top: 27%;
 	font-size: 31rem;
 	color: #ca4549;
@@ -125,19 +124,12 @@ section.banner {
 .slide {
 	position: relative;
 	display: none;
-	/* width: 100%;
-	height: auto; */
 	-webkit-animation: 0.6s ease-in-out;
 	        animation: 0.6s ease-in-out;
 }
 
-/* .slide > img {
-	display: block;
-} */
-
 .banner__vertical-phone {
 	position: absolute;
-	/* top: 53px; */
 	left: 7.7%;
 	width: 25.5%;
 	margin-top: 5.6%;
@@ -147,9 +139,8 @@ section.banner {
 
 .banner__horizontal-phone {
 	position: absolute;
-	/* top: 174px; */
-	right: 7.65%;
-	width: 51.4%;
+	right: 7.67%;
+    width: 51.35%;
 	margin-top: 18.5%;
 	z-index: 4;
 	cursor: pointer;
@@ -157,8 +148,7 @@ section.banner {
 
 .banner__vertical-display {
 	position: absolute;
-	/* top: 118px; */
-	left: 9.1%;
+	left: 9.15%;
 	width: 20%;
 	margin-top: 12.5%;
 	z-index: 5;
@@ -166,7 +156,6 @@ section.banner {
 
 .banner__horizontal-display {
 	position: absolute;
-	/* top: 188px; */
 	right: 17.25%;
 	width: 35.4%;
 	margin-top: 20%;
@@ -176,7 +165,6 @@ section.banner {
 .phones-group {
 	display: block;
 	width: 55%;
-	/* margin: 40.5px auto; */
 	margin: 4.5% auto;
 }
 
@@ -244,10 +232,9 @@ section.banner {
 		left: 0;
 	}
 }
-
 /* End Banner ==========*/
 
-/* Services */
+/* ---------------------------------------------------    Services */
 section.services {
 	background-color: #f2f2f2;
 	border-bottom: 6px solid #ffffff;
@@ -313,7 +300,7 @@ section.services {
 }
 /* End Services =========*/
 
-/* Portfolio */
+/* ---------------------------------------------------    Portfolio */
 section.portfolio {
 	background-color: #2d303a;
 	border-bottom: 6px solid #323746;
@@ -376,7 +363,6 @@ div.image-container__item > img {
 	outline: 5px solid #F06C64;
     outline-offset: -5px;
 }
-
 /* End Portfolio =========*/
 
 /* About */
@@ -428,7 +414,7 @@ section.about {
 }
 /* End About ============*/
 
-/* Contact */
+/* ---------------------------------------------------    Contact */
 section.contact {
 	background-color: #f06c64;
 	border-bottom: 6px solid #ea676b;
@@ -555,7 +541,7 @@ input:last-child:hover {
 }
 /* End Contact ============*/
 
-/* Footer */
+/* ---------------------------------------------------    Footer */
 footer.footer {
 	background-color: #2d303a;
 }
@@ -579,37 +565,55 @@ footer.footer {
 }
 /* End Footer ==========*/
 
-/* Media queries ==========*/
+/*   Media queries  */
+/* ---------------------------------------------------------------------------    1019 */
 @media (max-width: 1019px) {
 
 	.title__header {
-		margin-bottom: 26px;
+		margin-bottom: 21px;
 	}
 
 	/* banner */
+	.inner-banner {
+		padding: 0 30px;
+	}
+
 	.banner__carousel {
 		width: calc(100% - 80px);
 	}
 
+	.right-arrow {
+		right: 27px;
+	}
+
 	/* services */
 	.inner-services {
-		padding: 47px 40px 27px 40px;
+		padding: 43px 40px 30px 40px;
 	}
 
 	.services-container {
 		grid-template-columns: auto auto;
 		grid-template-rows: auto auto auto;
 		grid-template-areas: "service  service" "service  service" "service  service";
-		grid-column-gap: 32px;
+		grid-column-gap: 20px;
+		padding-top: 27px;
 	}
 
 	.service {
-		padding: 10px 21px 46px 0;
+		padding: 10px 33px 41px 0;
+	}
+
+	.service__icon {
+		padding: 1px 0 0 1px;
+	}
+
+	.service__title {
+		padding-bottom: 10.5px;
 	}
 	
 	/* portfolio */
 	.inner-portfolio {
-		padding: 66px 40px 67px 40px;
+		padding: 63px 40px 64px 40px;
 	}
 
 	.sort-bar {
@@ -626,41 +630,87 @@ footer.footer {
 	.image-container__item {
 		height: auto;	
 	}
-	
+
+	/* about	 */
+	.inner-about {
+		padding: 55px 40px 0 40px;
+	}
+
+	.members-container {
+		padding: 38px 0 69px 0;
+	}
+
+	.member__name {
+		padding: 9px 0 4px 0;
+	}
+
+	.member__info {
+		padding-bottom: 12px;
+	}
+
 	.member:nth-child(1n + 2) {
 		margin-left: 15px;
 	}
 
 	/* contacts */
+	.inner-contact {
+		padding: 56px 40px 38px 40px;
+	}
+
 	.contact-container {
-		padding-top: 30px;
+		padding-top: 23px;
 	}
 
 	.request-form {
-		padding: 2px 16px 0 0;
+		padding: 2px 20px 0 0;
+	}
+
+	input, textarea {
+		margin-bottom: 12px;
+	}
+
+	textarea {
+		height: 158px;
+	}
+
+	input:last-child {
+		margin-top: 3px;
+	}
+
+	.contacts__title {
+		padding-bottom: 1px;
+	}
+
+	.contacts__items {
+		padding-top: 11px;
 	}
 }
 
-/* @media (max-width: 900px) {
-	section.banner {
-		height: 547px;
-	}
-} */
-
+/* -----------------------------------------------------------------------------    768 */
 @media (max-width: 767px) {
 
 	.inner {
 		max-width: 767px;
 	}
 
-	/* header */
-	.inner-header {
-		padding-left: 20px;
-        padding-right: calc((100% - 150px)/2);
+	.pop-up {
+		width: 350px;
 	}
+
+	/* header */
+	header.header {
+		height: 71px;
+	}
+
+	.inner-header {
+		padding-top: 5px;
+		padding-left: 20px;
+    	padding-right: calc((100% - 100px)/2);
+    }
 
 	.burger-menu {
 		display: block;
+		margin-top: 2px;
 		cursor: pointer;
 	}
 
@@ -668,10 +718,15 @@ footer.footer {
 		display: none;
 	}
 
+	.logo__name {
+		font-size: 19rem;
+		letter-spacing: -0.3px;
+	}
+
 	/* banner */
-	/* section.banner {
-		height:431px;
-	} */
+	section.banner {
+		padding-top: 71px;
+	}
 
 	.inner-banner {
 		padding: 0 10px;
@@ -682,6 +737,7 @@ footer.footer {
 	}
 
 	.arrow {
+		margin-top: 24.5%;
 		font-size: 29rem;
 	}
 
@@ -691,30 +747,38 @@ footer.footer {
 
 	/* services */
 	.inner-services {
-		padding: 32px 30px 3px 30px;
+		padding: 28px 30px 1px 31px;
+	}
+
+	.title__content {
+		text-align: left;
+		letter-spacing: 0.3px;
 	}
 
 	.services-container {
 		grid-template-columns: auto;
 		grid-template-rows: auto auto auto auto auto auto;
 		grid-template-areas: "service"  "service" "service"  "service" "service" "service";
-		padding-top: 25px;
+		padding-top: 19px;
 	}
 
 	.service {
-		padding: 10px 13px 21px 0;
+		padding: 10px 18px 18px 0;
 	}
 
 	/* portfolio */
 	.inner-portfolio {
-		padding: 49px 30px 23px 30px;
+		padding: 46px 30px 20px 30px;
 	}
 
 	.sort-bar {
-		padding-top: 18px;
+		padding-top: 15px;
 	}
 
 	.image-container {
+		grid-template-columns: auto auto;
+		grid-template-rows: auto;
+		grid-template-areas: "image image" "image image" "image image" "image image" "image image";
 		grid-gap: 13px;
 		padding-top: 25px;
 	}
@@ -723,22 +787,15 @@ footer.footer {
 		display: none;
 	}
 
-
 	/* about */
 	.inner-about {
-		padding: 40px 30px 5px 30px;
-	}
-
-	.image-container {
-		grid-template-columns: auto auto;
-		grid-template-rows: auto;
-		grid-template-areas: "image image" "image image" "image image" "image image" "image image";
+		padding: 36px 30px 5px 30px;
 	}
 
 	.members-container {
 		flex-direction: column;
 		align-items: center;
-		padding: 32px 0 0 0;
+		padding: 24px 0 0 0;
 	}
 
 	.member {
@@ -750,9 +807,13 @@ footer.footer {
 		margin-left: 0;
 	}
 
+	.member__name {
+		padding: 14px 0 4px 0;
+	}
+
 	/* contacts */
 	.inner-contact {
-		padding: 50px 30px 10px 30px;
+		padding: 47px 30px 4px 30px;
     }
 
 	.contact-container {
@@ -761,7 +822,7 @@ footer.footer {
 
 	.request-form {
 		width: 100%;
-		padding: 0 0 34px 0;
+		padding: 0 0 31px 0;
 	}
 
 	input, textarea {
@@ -769,11 +830,20 @@ footer.footer {
 		
 	}
 
+	input {
+		padding: 12px 7px;
+	}
+
 	input:last-child {
 		width: 100%;
 		height: 50px;
+		margin-top: 0;
 		margin-bottom: 0;
-    }
+	}
+	
+	textarea {
+		padding: 5px 14px 13px 6px;
+	}
 	
 	.contacts {
 		width: 100%;
@@ -782,7 +852,8 @@ footer.footer {
 	}
 
 	.contacts__items {
-		padding-top: 16px;
+		padding-top: 9px;
+    	line-height: 2.1;
 	}
 
 	/* footer */
@@ -793,24 +864,18 @@ footer.footer {
 	.copyright {
 		display: none;
 	}
-	
 }
 
-/* @media (max-width: 600px) {
-	section.banner {
-		height: 435px;
-	}
-} */
-
+/* -----------------------------------------------------------------------------    374 */
 @media (max-width: 374px) {
 
 	.inner {
 		max-width: 374px;
 	}
 
-	/* section.banner {
-		height: 315.5px;
-	} */
+	.pop-up {
+		width: 320px;
+	}
 
     /* services */
 	.service {
@@ -818,14 +883,10 @@ footer.footer {
 	}
 
 	/* portfolio */
-
     .sort-bar__button {
 		margin-right: 0px;
 	}
 
-	
 }
-
-
 
 /* End media queries ==========*/

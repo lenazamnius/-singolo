@@ -1,4 +1,9 @@
+const sections = document.querySelectorAll('section');
 const menu = document.getElementById('menu');
+const burgerIcon = document.getElementById('burger-main');
+const popupBurgerIcon = document.getElementById('popup-burger');
+const popupPanel = document.getElementById('popup-panel');
+const popupMenu = document.getElementById('popup-menu');
 const slides = document.querySelectorAll('.slide');
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
@@ -18,18 +23,24 @@ window.onresize = setSliderHeight;
 
 // this make responsive height of section banner
 function setSliderHeight() {
-  if(window.innerWidth < 1020) {
-    let slideHeight = window.innerWidth / 1.7 + 95;
-    document.querySelector('section.banner').style.height = `${slideHeight}px`;
+  let slideHeight;
+  const banner = document.querySelector('section.banner');
+  if(window.innerWidth < 768) {
+    slideHeight = window.innerWidth / 1.7 + 71;
+    banner.style.height = `${slideHeight}px`;
+  } else if(window.innerWidth < 1020) {
+    slideHeight = window.innerWidth / 1.7 + 95;
+    banner.style.height = `${slideHeight}px`;
+  } else {
+    banner.style.height = '695px';
   }
 }
 
 // HEADER section 
 function onScroll(event) {
   const curPosition = window.scrollY + 95;
-  const sections = document.querySelectorAll('section');
-  
-  sections.forEach(el => {
+    
+  sections.forEach((el) => {
     if(el.offsetTop < curPosition && (el.offsetTop + el.offsetHeight) > curPosition) {
       menu.querySelectorAll('a.menu__item').forEach((a) => {
         a.classList.remove('active');
@@ -41,7 +52,36 @@ function onScroll(event) {
   });
 }
 
+function onScrollPopup(event) {
+  const curPosition = window.scrollY + 71;
+
+  sections.forEach((el) => {
+    if(el.offsetTop < curPosition && (el.offsetTop + el.offsetHeight) > curPosition) {
+      popupMenu.querySelectorAll('a.popup-panel__menu-item').forEach((a) => {
+        a.classList.remove('active');
+        if(el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+          a.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
 document.addEventListener('scroll', onScroll);
+document.addEventListener('scroll', onScrollPopup);
+
+burgerIcon.addEventListener('click', () => {
+  popupPanel.classList.remove('hidden');
+});
+
+popupBurgerIcon.addEventListener('click', () => {
+  popupPanel.classList.add('hidden');
+});
+
+popupMenu.addEventListener('click', (event) => {
+  event.target.classList.add('active');
+  popupPanel.classList.add('hidden');
+});
 // HEADER section end
 
 // SLIDER section

@@ -12,7 +12,7 @@
   <!-- header -->
   <header class="header" id="header">
     <div class="inner inner-header">
-      <div class="burger-menu none-tap-highlight">
+      <div class="burger-menu none-tap-highlight" id="burger-main">
         <img src="assets/images/burger-menu-icon.png" alt="burger menu icon">
       </div>
       <div class="logo none-tap-highlight">
@@ -31,6 +31,26 @@
   </header>
   <!-- end header -->
 
+  <!-- popup panel -->
+  <div class="popup-panel hidden" id="popup-panel">
+    <div class="popup-panel__top">
+      <div class="popup-panel__burger none-tap-highlight" id="popup-burger">
+        <img src="assets/images/burger-menu-icon.png" alt="burger menu icon">
+      </div>
+      <div class="popup-panel__logo none-tap-highlight">
+        <a href="#">SINGOLO<span class="asterisk">*</span></a>
+      </div>
+    </div>
+    <nav class="popup-panel__menu" id="popup-menu">
+      <a class="popup-panel__menu-item none-tap-highlight" href="#banner">HOME</a>
+      <a class="popup-panel__menu-item none-tap-highlight" href="#services">SERVICES</a>
+      <a class="popup-panel__menu-item none-tap-highlight" href="#portfolio">PORTFOLIO</a>
+      <a class="popup-panel__menu-item none-tap-highlight" href="#about">ABOUT</a>
+      <a class="popup-panel__menu-item none-tap-highlight" href="#contact">CONTACT</a>
+    </nav>
+  </div>
+  <!-- end popup panel -->
+
   <!-- banner -->
   <section class="banner" id="banner">
     <div class="inner inner-banner">
@@ -47,8 +67,8 @@
           </div>
         </div>  
       </div>
-      <div id="left-arrow" class="arrow left-arrow"><i class="fas fa-chevron-left"></i></div>
-      <div id="right-arrow" class="arrow right-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div id="left-arrow" class="arrow left-arrow none-tap-highlight"><i class="fas fa-chevron-left"></i></div>
+      <div id="right-arrow" class="arrow right-arrow none-tap-highlight"><i class="fas fa-chevron-right"></i></div>
     </div>
   </section>
   <!-- end banner -->
