@@ -19,9 +19,9 @@ const descriptionInput = document.getElementById('text');
 const popUpSubject = document.getElementById('ms_subject');
 const popUpDescription = document.getElementById('ms_text');
 
+// make responsive height of section banner
 window.onresize = setSliderHeight;
 
-// this make responsive height of section banner
 function setSliderHeight() {
   let slideHeight;
   const banner = document.querySelector('section.banner');
@@ -36,13 +36,49 @@ function setSliderHeight() {
   }
 }
 
-// HEADER section 
-function onScroll(event) {
-  const curPosition = window.scrollY + 95;
+// remove hover styles on touch screens
+function watchHover() {
+  let hasHoverClass = false;
+  let lastTouchTime = 0;
+  const container = document.body;
+
+  function enableHover() {
+    // filter emulated events coming from touch events
+    if (new Date() - lastTouchTime < 500) return;
+    if (hasHoverClass) return;
     
+    container.classList.add('hasHover');
+    hasHoverClass = true;
+  }
+
+  function disableHover() {
+    if (!hasHoverClass) return;
+    
+    container.classList.remove('hasHover');
+    hasHoverClass = false;
+  }
+
+  function updateLastTouchTime() {
+    lastTouchTime = new Date();
+  }
+
+  document.addEventListener('touchstart', updateLastTouchTime, true);
+  document.addEventListener('touchstart', disableHover, true);
+  document.addEventListener('mousemove', enableHover, true);
+
+  enableHover();
+}
+
+watchHover();
+
+// -----------------------------------------------------------------------------------   HEADER section 
+// track position of sections and add class active to menu items
+function checkPositionAddActive(container, item, margin) {
+  const curPosition = window.scrollY + margin;
+
   sections.forEach((el) => {
     if(el.offsetTop < curPosition && (el.offsetTop + el.offsetHeight) > curPosition) {
-      menu.querySelectorAll('a.menu__item').forEach((a) => {
+      container.querySelectorAll(item).forEach((a) => {
         a.classList.remove('active');
         if(el.getAttribute('id') === a.getAttribute('href').substring(1)) {
           a.classList.add('active');
@@ -52,24 +88,18 @@ function onScroll(event) {
   });
 }
 
-function onScrollPopup(event) {
-  const curPosition = window.scrollY + 71;
-
-  sections.forEach((el) => {
-    if(el.offsetTop < curPosition && (el.offsetTop + el.offsetHeight) > curPosition) {
-      popupMenu.querySelectorAll('a.popup-panel__menu-item').forEach((a) => {
-        a.classList.remove('active');
-        if(el.getAttribute('id') === a.getAttribute('href').substring(1)) {
-          a.classList.add('active');
-        }
-      });
-    }
-  });
+function onScroll(event) {
+  if(window.innerWidth < 768) {
+    checkPositionAddActive(popupMenu, 'a.popup-panel__menu-item', 71);
+  } else {
+    checkPositionAddActive(menu, 'a.menu__item', 95);
+  }
 }
 
 document.addEventListener('scroll', onScroll);
-document.addEventListener('scroll', onScrollPopup);
 
+
+// popup panel behavior
 burgerIcon.addEventListener('click', () => {
   popupPanel.classList.remove('hidden');
 });
@@ -84,7 +114,7 @@ popupMenu.addEventListener('click', (event) => {
 });
 // HEADER section end
 
-// SLIDER section
+// -----------------------------------------------------------------------------------   SLIDER section
 let currentSlide = 0;
 let isEnabled = true;
 
@@ -157,7 +187,7 @@ rightArrow.addEventListener('click', () => {
 });
 // SLIDER section end
 
-// PORTFOLIO section
+// -----------------------------------------------------------------------------------   PORTFOLIO section
 function indexesPattern(arr) {
   for(i = 0; i < arr.length; i++) {
     let tempNode = (document.getElementById(`image${arr[i]}`));
@@ -195,7 +225,7 @@ imageGallery.addEventListener('click', (event) => {
 });
 // PORTFOLIO section end
 
-// CONTACTS section
+// -----------------------------------------------------------------------------------   CONTACTS section
 submit.addEventListener('click', () => {
   const regex = /\S+@\S+/;
   if(document.getElementById('user_name').value != '' && regex.test(document.getElementById('email').value)) {
