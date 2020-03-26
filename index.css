@@ -505,12 +505,6 @@ body.hasHover [type="submit"]:hover {
   	background-color: #d6564f;
 }
 
-/* #submit.submit {
-	font-weight: 900;
-	color: #f0d8d9;
-  	background-color: #d6564f;
-} */
-
 ::-webkit-input-placeholder {
 	font: 400 12rem "Lato";
 	line-height: 22px;
