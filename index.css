@@ -378,7 +378,9 @@ section.about {
 .members-container {
 	display: -webkit-box;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	        flex-direction: row;
 	padding: 45px 0 67px 0;
 	letter-spacing: -0.3px;
 }
@@ -427,7 +429,9 @@ section.contact {
 .contact-container {
 	display: -webkit-box;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	        flex-direction: row;
 	padding-top: 42px;
 }
 
@@ -499,7 +503,7 @@ input:last-child {
 	background-color: #FBC65F;
 }
 
-body.hasHover [type="submit"]:hover {
+input:last-child:hover {
 	font-weight: 900;
 	color: #f0d8d9;
   	background-color: #d6564f;
@@ -796,8 +800,11 @@ footer.footer {
 	}
 
 	.members-container {
-		flex-direction: column;
-		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		        align-items: center;
 		padding: 24px 0 0 0;
 	}
 
@@ -820,7 +827,9 @@ footer.footer {
     }
 
 	.contact-container {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		        flex-direction: column;
 	}
 
 	.request-form {
@@ -861,7 +870,8 @@ footer.footer {
 
 	/* footer */
 	.inner-footer {
-		justify-content: center;
+		-webkit-box-pack: center;
+		        justify-content: center;
 	}
 
 	.copyright {

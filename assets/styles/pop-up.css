@@ -1,4 +1,3 @@
-/* ------ Styles for pop-up ---------- */
 /* some styles to position the modal at the center of the page */
 .pop-up.hidden {
 	display: none;
@@ -56,4 +55,3 @@
 	color: #f0d8d9;
 	background-color: #f48c8f;
 }
-/* -------- END styles for pop-up---------- */

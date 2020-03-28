@@ -7,8 +7,11 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	display: -webkit-box;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
 	width: 278px;
 	height: 100vh;
 	padding-top: 24px;
@@ -21,11 +24,13 @@
 }
 
 .popup-panel__top {
+	display: -webkit-box;
 	display: flex;
 }
 
 .popup-panel__burger {
-    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     cursor: pointer;
 }
 
@@ -37,8 +42,11 @@
 }
 
 .popup-panel__menu {
+	display: -webkit-box;
 	display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
     margin-left: 51px;
     margin-top: 184px;
     font-size: 24.2rem;
